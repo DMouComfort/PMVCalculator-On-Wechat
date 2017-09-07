@@ -1,0 +1,28 @@
+{
+  "pages": [ 
+    "pages/index/index",
+    "pages/cal/cal",
+    "pages/caltop/caltop",
+
+    "pages/info/info",
+    "pages/license1/license1",
+    "pages/license2/license2",
+    "pages/mylicense/mylicense",
+    "pages/calIcl/calIcl",
+    "pages/calpsy/calpsy"
+
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "PMV计算器",
+    "navigationBarBackgroundColor": "#f8f8f8",
+    "backgroundColor": "#f8f8f8"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
