@@ -1,0 +1,65 @@
+<!--pages/info/info.wxml-->
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__h1">程序说明</view>
+            <view class="weui-article__section">
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">1.1 关于本程序</view>
+                    <view class="weui-article__p">
+                         本程序根据P.O.Fanger教授提出的PMV模型，通过人体热平衡和热调节模型，输入室内热环境的相关参数——空气温度、辐射温度、相对湿度、相对风速、代谢率和服装热阻——可以对人群的平均热感觉投票进行预测，其中数字的含义是：-3——很冷；-2——冷；-1——有点冷；0——不冷不热；1——有点热；2——热；3——很热。迄今为止PMV仍是暖通空调领域中最为广泛采用的热环境评价指标，也是我国《民用建筑供暖通风与空气调节设计规范》GB50736-2012中对室内热环境参数规定的依据。
+                    </view>
+                    <view class="weui-article__p">
+                         本程序由四个部分组成，既可以通过环境参数，计算特定环境中的PMV，也可以在给定PMV的情况下，计算达到相应PMV时，室内应有的操作温度（注意：操作温度是空气温度和平均辐射温度的加权平均，但在大多数室内情况下，可近似认为空气温度等于操作温度），本程序的第三个部分可以计算一些常见服装的服装热阻。本程序最后一个部分可以计算湿空气的各种物性参数。
+                    </view>
+                     <view class="weui-article__p">
+                         关于“综合SET考虑气流冷却效果”，参考的是ASHRAE Standard 55-2013中介绍的相关方法。该标准指出，可以采用SET模型评估风速大于0.2m/s的情况。这种方法可以更好地体现气流的冷却效果。其计算方法如下：
+                         </view>
+                         <view class="weui-article__p">
+                         a)根据原有的输入参数（风速≥0.15m/s），计算对应的SET；
+                    </view>
+                    <view class="weui-article__p">
+                         b)设定风速为0.15m/s（静风），计算新的调整后的温度，使调整后的温度在风速为0.15m/s，其余参数不变的情况下，与a)中的情况达到相同的SET；
+                    </view>
+                    <view class="weui-article__p">
+                         c)将b)中计算所得的空气温度代替实际空气温度，用0.15m/s的风速代替实际风速，计算PMV即为考虑气流冷却效果后的PMV。
+                    </view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">1.2 参考文献</view>
+                    <view class="weui-article__p">朱颖心. 建筑环境学. 中国建筑工业出版社, 2016.</view>     
+                    <view class="weui-article__p">Air-ConditioningEngineers. 2013 ASHRAE handbook : fundamentals. SI edition. ASHRAE, 2013.</view>
+                    <view class="weui-article__p">ANSI/ASHRAE Standard 55-2013, Thermal Environmental Conditions for Human Occupancy</view> 
+                    <view class="weui-article__p">Fanger, P. O, Thermal Comfort, Danish Technical Press, 1970 (Republished by McGraw-Hill, New York, 1973).</view> 
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">1.3 授权与许可</view>
+                    <view class="weui-article__p">本程序遵守GPL协议</view>          
+                    <view class="weui-article__p"> PMV Calculator v1.1.1  </view>  
+                    <view class="weui-article__p"> Copyright (C) 2017  Di Mou</view>
+                    <view class="weui-article__p">This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</view>
+                    <view class="weui-article__p">This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program.</view>
+                    <navigator url='../mylicense/mylicense' class="weui-footer__link">license</navigator>
+                    <view class="weui-article__p">如需源码，请联系原作者。</view>   
+                     <view class="weui-article__p"></view>
+
+                    <view class="weui-article__p">本程序logo使用"思源黑体Bold"字体</view>
+                    <view class="weui-article__p">https://github.com/adobe-fonts/source-han-sans/</view>
+                    <navigator url='../license1/license1' class="weui-footer__link">license</navigator>
+                    <view class="weui-article__p"></view>
+                    <view class="weui-article__p">本程序UI界面使用WeUI</view>
+                <view class="weui-article__p"> https://github.com/weui/weui/blob/master/README_cn.md </view>
+                <navigator url='../license2/license2' class="weui-footer__link">license</navigator>
+                </view>              
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">1.4 作者联系方式</view>
+                    <view class="weui-article__p">Di Mou</view>
+                    <view class="weui-article__p">moses_mou@qq.com</view>
+                </view>
+            </view>
+        </view>
+        <view class="weui-footer">
+            <view class="weui-footer__text">Copyright © 2017 Di  Mou</view>
+        </view>
+    </view>
+</view>

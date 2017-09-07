@@ -1,0 +1,5 @@
+weui-label_narrow {
+  width: 50px;
+  word-wrap: break-word;
+  word-break: break-all;
+}

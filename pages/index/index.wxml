@@ -1,0 +1,18 @@
+<!--pages/index/index.wxml-->
+<view class="page"  >
+    <view class="page__hd">
+    <image class="userinfo-avatar"  background-size="cover" src="images/logo.png"></image>
+        <view class="page__title">PMV计算器v2.0</view>
+        <view class="page__desc">欢迎使用PMV计算器，请选择您要使用的功能</view>
+        <navigator url='../cal/cal' class="weui-btn-area">通过环境参数计算PMV和SET</navigator>
+        <navigator url='../caltop/caltop' class="weui-btn-area">通过PMV计算操作温度</navigator>    
+        <navigator url='../calIcl/calIcl' class="weui-btn-area">服装热阻计算工具</navigator>   
+        <navigator url='../calpsy/calpsy' class="weui-btn-area">湿空气性质计算工具</navigator> 
+    </view>
+    <view class="weui-footer">
+            <view class="weui-footer__links">
+                <navigator url='../info/info' class="weui-footer__link">程序说明</navigator>
+            </view>
+            <view class="weui-footer__text">Copyright © 2017 Di  Mou</view>
+        </view>
+</view>

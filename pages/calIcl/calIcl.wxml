@@ -1,0 +1,115 @@
+<!--pages/calIcl/calIcl.wxml-->
+<view class="page"  >
+  <view class="page__hd">
+       <view class="page__title">计算服装热阻</view>
+  </view>
+  <view class="page__bd">
+  <view class="weui-cells_cb weui-cells_after-title">
+            <view class="weui-cell weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">服装热阻/clo</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="weui-label">{{allclo}}</view>
+                </view>
+            </view>
+            </view>
+        <view class="weui-cells__title">外衣</view>
+        <view class="weui-cells_cb weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+              <checkbox-group  bindchange="checkbox1Change">        
+                  <label class="weui-cell__hd" wx:for="{{checkboxItems1}}" wx:key="value">              
+                      <checkbox value="{{item.value}}" checked="{{item.checked}}">
+                      <view class="weui-cell__hd ">{{item.name}} </view>
+                      </checkbox>
+                  </label>            
+              </checkbox-group>
+          </view> 
+          <button class="weui-btn" type="default" bindtap="clickBtn1">全不选</button>   
+         </view>    
+         <view class="weui-cells__title">上衣</view>
+         <view class="weui-cells_cb weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+              <checkbox-group  bindchange="checkbox2Change">        
+                  <label class="weui-cell__hd" wx:for="{{checkboxItems2}}" wx:key="value">              
+                      <checkbox value="{{item.value}}" checked="{{item.checked}}">
+                      <view class="weui-cell__hd ">{{item.name}} </view>
+                      </checkbox>
+                  </label>            
+              </checkbox-group>
+          </view>
+          <button class="weui-btn" type="default" bindtap="clickBtn2">全不选</button>       
+         </view>    
+         <view class="weui-cells__title">内衣</view>
+         <view class="weui-cells_cb weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+              <checkbox-group  bindchange="checkbox3Change">        
+                  <label class="weui-cell__hd" wx:for="{{checkboxItems3}}" wx:key="value">              
+                      <checkbox value="{{item.value}}" checked="{{item.checked}}">
+                      <view class="weui-cell__hd ">{{item.name}} </view>
+                      </checkbox>
+                  </label>            
+              </checkbox-group>
+          </view>
+          <button class="weui-btn" type="default" bindtap="clickBtn3">全不选</button>       
+         </view> 
+         <view class="weui-cells__title">下装</view>
+         <view class="weui-cells_cb weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+              <checkbox-group  bindchange="checkbox4Change">        
+                  <label class="weui-cell__hd" wx:for="{{checkboxItems4}}" wx:key="value">              
+                      <checkbox value="{{item.value}}" checked="{{item.checked}}">
+                      <view class="weui-cell__hd ">{{item.name}} </view>
+                      </checkbox>
+                  </label>            
+              </checkbox-group>
+          </view>
+          <button class="weui-btn" type="default" bindtap="clickBtn4">全不选</button>       
+         </view> 
+         <view class="weui-cells__title">袜</view>
+         <view class="weui-cells_cb weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+              <checkbox-group  bindchange="checkbox5Change">        
+                  <label class="weui-cell__hd" wx:for="{{checkboxItems5}}" wx:key="value">              
+                      <checkbox value="{{item.value}}" checked="{{item.checked}}">
+                      <view class="weui-cell__hd ">{{item.name}} </view>
+                      </checkbox>
+                  </label>            
+              </checkbox-group>
+          </view>
+          <button class="weui-btn" type="default" bindtap="clickBtn5">全不选</button>       
+         </view> 
+         <view class="weui-cells__title">鞋</view>
+         <view class="weui-cells_cb weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+              <checkbox-group  bindchange="checkbox6Change">        
+                  <label class="weui-cell__hd" wx:for="{{checkboxItems6}}" wx:key="value">              
+                      <checkbox value="{{item.value}}" checked="{{item.checked}}">
+                      <view class="weui-cell__hd ">{{item.name}} </view>
+                      </checkbox>
+                  </label>            
+              </checkbox-group>
+          </view>
+          <button class="weui-btn" type="default" bindtap="clickBtn6">全不选</button>       
+            </view>
+            <view class="weui-cells_cb weui-cells_after-title">
+            <view class="weui-cell weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">服装热阻/clo</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="weui-label">{{allclo}}</view>
+                </view>
+            </view>
+         </view> 
+    <view class="weui-footer">
+            <view class="weui-footer__links">
+                <navigator url='../info/info' class="weui-footer__link">程序说明</navigator>
+            </view>
+            <view class="weui-footer__text">Copyright © 2017 Di  Mou</view>
+    </view>
+  </view>
+</view>
+
+          
+  

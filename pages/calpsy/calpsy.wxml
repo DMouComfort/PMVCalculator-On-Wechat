@@ -1,0 +1,151 @@
+<view class="page"  >
+  <view class="page__hd">
+      <view class="page__title">湿空气性质计算</view>
+  </view>
+  <view class="page__bd">
+    <form bindreset="clearInput">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">大气压力(Pa)</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="pmvIn" type="text" placeholder="101325" 
+                    bindinput="BInput"/>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell weui-cell_input">
+          <picker bindchange="bindx1ValueChange" value="{{x1ValueIndex}}" range="{{x1Values}}">
+            <view class="weui-select">{{x1Values[x1ValueIndex]}}</view>
+          </picker>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="vIn"  type="text" placeholder="请输入数值" bindinput="x1Input"/>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell weui-cell_input">
+          <picker bindchange="bindx2ValueChange" value="{{x2ValueIndex}}" range="{{x2Values}}">
+            <view class="weui-select">{{x2Values[x2ValueIndex]}}</view>
+          </picker>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="vIn"  type="text" placeholder="请输入数值" bindinput="x2Input"/>
+        </view>
+        
+      </view>
+      <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="cal">计算</button>
+        </view>
+        <view class="weui-cell weui-cell">
+          <view class="weui-cell__hd">
+            <view class="weui-label-1">干球温度：</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="weui-label-num">{{Ta}}</view>
+          </view>
+          <view class="weui-cell__hd">
+            <view class="weui-label-unt">℃</view>
+          </view>
+        </view> 
+        <view class="weui-cell weui-cell">
+          <view class="weui-cell__hd">
+            <view class="weui-label-1">相对湿度：</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="weui-label-num">{{RH}}</view>
+          </view>
+          <view class="weui-cell__hd">
+            <view class="weui-label-unt">%</view>
+          </view>
+        </view> 
+        <view class="weui-cell weui-cell">
+          <view class="weui-cell__hd">
+            <view class="weui-label-1">含湿量：</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="weui-label-num">{{d}}</view>
+          </view>
+          <view class="weui-cell__hd">
+            <view class="weui-label-unt">g/kg</view>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell">
+          <view class="weui-cell__hd">
+            <view class="weui-label-1">焓：</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="weui-label-num">{{h}}</view>
+          </view>
+          <view class="weui-cell__hd">
+            <view class="weui-label-unt">kJ/kg</view>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell">
+          <view class="weui-cell__hd">
+            <view class="weui-label-1">湿球温度：</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="weui-label-num">{{Tw}}</view>
+          </view>
+          <view class="weui-cell__hd">
+            <view class="weui-label-unt">℃</view>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell">
+          <view class="weui-cell__hd">
+            <view class="weui-label-1">露点温度：</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="weui-label-num">{{Td}}</view>
+          </view>
+          <view class="weui-cell__hd">
+            <view class="weui-label-unt">℃</view>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell">
+          <view class="weui-cell__hd">
+            <view class="weui-label-1">饱和水蒸气压力：</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="weui-label-num">{{Pws}}</view>
+          </view>
+          <view class="weui-cell__hd">
+            <view class="weui-label-unt">kPa</view>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell">
+          <view class="weui-cell__hd">
+            <view class="weui-label-1">水蒸气分压力：</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="weui-label-num">{{Pa}}</view>
+          </view>
+          <view class="weui-cell__hd">
+            <view class="weui-label-unt">kPa</view>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell">
+          <view class="weui-cell__hd">
+            <view class="weui-label-1">空气密度：</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="weui-label-num">{{rou}}</view>
+          </view>
+          <view class="weui-cell__hd">
+            <view class="weui-label-unt">kg/m3</view>
+          </view>
+        </view>
+     </view>   
+     
+    </form>
+       
+    <view class="weui-footer">
+      <view class="weui-footer__links">
+        <navigator url='../info/info' class="weui-footer__link">程序说明</navigator>
+      </view>
+        <view class="weui-footer__text">Copyright © 2017 Di  Mou</view>
+    </view>
+  </view>
+</view>
