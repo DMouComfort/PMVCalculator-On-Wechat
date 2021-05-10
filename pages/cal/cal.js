@@ -3,14 +3,15 @@ var app = getApp()
 Page({
     data: {
         pmv:'',
-        ta:'',
-        tr:'',
-        v:'',
-        rh:'',
-        clo:'',
-        met:'',
+        ta:'25',
+        tr:'25',
+        v:'0.15',
+        rh:'50',
+        clo:'0.5',
+        met:'1.0',
         ppd:'',
         setemp:'',
+        ce:'',
         metValues: ["请选择活动类型","静坐（阅读）", "办公室打字", "躺着", "睡眠","站着休息","站着整理文档","站着，偶尔走动","提重物，打包","做家务"],
         cloValues:["请选择服装类型","长裤、短袖衬衫","长裤、长袖衬衫","短袖衬衣、短裤","长裤、长衬衫、短外衣","长裤、长袖衬衫、背心、T恤","长运动衣裤","及膝裙、短袖衬衫、连裤袜、凉鞋","及膝裙，长袖衬衫，连裤袜，长衬裙"],
         metValueIndex:0,
@@ -41,11 +42,15 @@ Page({
         var ppdo=fun.calPPD(pout);
         ppdo=Math.round(ppdo*100)/100;
         var pset = fun.findSET(tai, tri, vi, rhi, meti, cloi);
+        console.log('SET='+pset)
+
+
         pset = Math.round(pset * 100) / 100;
         this.setData({
             pmv:pout,
             ppd:ppdo,
-            setemp:pset
+            setemp:pset,
+            ce : ''
         })
     },
     taInput:function(e){
@@ -103,22 +108,6 @@ Page({
         )
       }
     },
-    clearInput: function(e){
-      this.setData({
-        pmv: '',
-        ta: '',
-        tr: '',
-        v: '',
-        rh: '',
-        clo: '',
-        met: '',
-        ppd: '',
-        setemp: '',
-        metValueIndex: 0,
-        cloValueIndex: 0
-      }
-      )
-    },
     calPMVEle:function(e){
       var tai = parseFloat(this.data.ta);
       var tri = parseFloat(this.data.tr);
@@ -138,17 +127,19 @@ Page({
         });
         return
       }
-      var adjt = fun.findAdjTa(tai, tri, vi, rhi, meti, cloi);
-      var pout = fun.calPMV(adjt, tri, 0.15, rhi, meti, cloi);
+      var CE = fun.findAdjTa(tai, tri, vi, rhi, meti, cloi);
+      var pout = fun.calPMV(tai - CE, tri- CE, 0.1, rhi, meti, cloi);
       pout = Math.round(pout * 100) / 100;
       var ppdo = fun.calPPD(pout);
       ppdo = Math.round(ppdo * 100) / 100;
-      var pset = fun.findSET(adjt, tri, 0.15, rhi, meti, cloi);
+      var pset = fun.findSET(tai - CE, tri- CE, 0.1, rhi, meti, cloi);
       pset = Math.round(pset * 100) / 100;
+      CE = Math.round(CE*100) / 100;
       this.setData({
         pmv: pout,
         ppd: ppdo,
-        setemp: pset
+        setemp: pset,
+        ce: CE 
       })
     }
 });

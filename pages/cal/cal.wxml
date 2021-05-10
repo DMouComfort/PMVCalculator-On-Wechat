@@ -12,7 +12,7 @@
                     <view class="weui-label">空气温度/℃</view>
                 </view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" type="text"  name="taIn" placeholder="请输入空气温度" 
+                    <input class="weui-input" type="text"  name="taIn" placeholder="25" 
                     bindinput="taInput"/>
                 </view>
             </view>
@@ -21,7 +21,7 @@
                     <view class="weui-label">辐射温度/℃</view>
                 </view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" type="text" name="trIn" placeholder="请输入平均辐射温度" 
+                    <input class="weui-input" type="text" name="trIn" placeholder="25" 
                     bindinput="trInput"/>
                 </view>
             </view>
@@ -30,7 +30,7 @@
                     <view class="weui-label">相对湿度/%</view>
                 </view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" name="rhIn"   type="digit" placeholder="请输入相对湿度" 
+                    <input class="weui-input" name="rhIn"   type="digit" placeholder="50" 
                     bindinput="rhInput"/>
                 </view>
             </view>
@@ -39,7 +39,7 @@
                     <view class="weui-label">相对风速/m/s</view>
                 </view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" name="vIn"  type="digit" placeholder="请输入相对风速" 
+                    <input class="weui-input" name="vIn"  type="digit" placeholder="0.15" 
                     bindinput="vInput"/>
                 </view>
             </view>    
@@ -54,7 +54,7 @@
                 <picker bindchange="bindCloValueChange" value="{{cloValueIndex}}" range="{{cloValues}}">
                         <view class="weui-select">{{cloValues[cloValueIndex]}}</view>
                     </picker>
-                    <input class="weui-input" name="cloIn"  type="digit" placeholder="自定义数值" 
+                    <input class="weui-input" name="cloIn"  type="digit" placeholder="0.5" 
                     bindinput="cloInput"/>
                 </view>        
             </view>   
@@ -69,7 +69,7 @@
                 <picker bindchange="bindMetValueChange" value="{{metValueIndex}}" range="{{metValues}}">
                         <view class="weui-select">{{metValues[metValueIndex]}}</view>
                     </picker>
-                    <input class="weui-input" name="metIn"  type="digit" placeholder="自定义数值" 
+                    <input class="weui-input" name="metIn"  type="digit" placeholder="1.0" 
                     bindinput="metInput"/>
                 </view>
             </view>  
@@ -96,19 +96,26 @@
                 <view class="weui-cell__bd">
                     <view class="weui-label">{{setemp}}</view>
                 </view>
+            </view>
+            <view class="weui-cell weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">冷却效果/℃</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="weui-label">{{ce}}</view>
+                </view>
             </view>  
         </view>
         <view class="weui-btn-area">
             <button class="weui-btn" type="primary" bindtap="calPMV">计算（经典PMV计算方法）</button>
             <button class="weui-btn" type="primary" bindtap="calPMVEle">计算（综合SET考虑气流冷却效果）</button>
-            <button class="weui-btn" type="default" form-type="reset">清空输入值</button>
         </view>
         </form>
         <view class="weui-footer">
             <view class="weui-footer__links">
                 <navigator url='../info/info' class="weui-footer__link">程序说明</navigator>
             </view>
-            <view class="weui-footer__text">Copyright © 2017 Di  Mou</view>
+            <view class="weui-footer__text">Copyright © 2017-2020 Di  Mou</view>
         </view>
     </view>
 </view>
