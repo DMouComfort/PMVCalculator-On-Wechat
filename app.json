@@ -1,16 +1,14 @@
 {
-  "pages": [ 
+  "pages": [
     "pages/index/index",
     "pages/cal/cal",
     "pages/caltop/caltop",
-
     "pages/info/info",
     "pages/license1/license1",
     "pages/license2/license2",
     "pages/mylicense/mylicense",
-    "pages/calIcl/calIcl",
-    "pages/calpsy/calpsy"
-
+    "pages/calpsy/calpsy",
+    "pages/cal utci/cal"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -24,5 +22,6 @@
     "uploadFile": 10000,
     "downloadFile": 10000
   },
-  "debug": true
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
 }

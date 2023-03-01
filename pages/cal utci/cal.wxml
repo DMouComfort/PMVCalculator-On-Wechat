@@ -1,0 +1,68 @@
+<view class="page"  >
+    <view class="page__hd">
+        <view class="page__title">通过环境参数计算UTCI</view>
+        <view class="page__desc">*注意，UTCI计算中风速对应的是10m上空处风速</view>
+    </view>
+    
+    <view class="page__bd">
+    <form bindreset="clearInput">
+        <view class="weui-cells__title">输入参数</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">空气温度/℃</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" type="text"  name="taIn" placeholder="25" 
+                    bindinput="taInput"/>
+                </view>
+            </view>
+           <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">辐射温度/℃</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" type="text" name="trIn" placeholder="25" 
+                    bindinput="trInput"/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">相对湿度/%</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="rhIn"   type="digit" placeholder="50" 
+                    bindinput="rhInput"/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">风速/m/s</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="vIn"  type="digit" placeholder="0.5" 
+                    bindinput="vInput"/>
+                </view>
+            </view>    
+             <view class="weui-cell weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">UTCI</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view class="weui-label">{{utci}}</view>
+                </view>
+            </view>     
+        </view>
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="calUTCI">计算</button>
+
+        </view>
+        </form>
+        <view class="weui-footer">
+            <view class="weui-footer__links">
+                <navigator url='../info/info' class="weui-footer__link">程序说明</navigator>
+            </view>
+            <view class="weui-footer__text">Copyright © 2017-2021 Di  Mou</view>
+        </view>
+    </view>
+</view>

@@ -115,7 +115,7 @@ Page({
       var vi = parseFloat(this.data.v);
       var cloi = parseFloat(this.data.clo);
       var meti = parseFloat(this.data.met);
-      if (isNaN(tai) || isNaN(tri) || isNaN(rhi) || isNaN(vi) || isNaN(cloi) || isNaN(meti) || rhi < 0 || rhi > 100 || cloi < 0 || meti < 0 || vi < 0.15) {
+      if (isNaN(tai) || isNaN(tri) || isNaN(rhi) || isNaN(vi) || isNaN(cloi) || isNaN(meti) || rhi < 0 || rhi > 100 || cloi < 0 || meti < 0 || vi <= 0.15) {
         wx.showModal({
           content: '有不合理输入参数或空值！请确定所有输入值都是数字，除了温度其他变量不允许是负数，风速必须大于0.15m/s！',
           showCancel: false,
